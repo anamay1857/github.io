@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anamay Prasad | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #000;
+            color: #fff;
+        }
+        header {
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        .hero {
+    height: 100vh;
+    display: flex;
+    padding: 0;
+    background: none !important;
+}
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        .hero p {
+            margin-top: 10px;
+            opacity: .8;
+            font-size: 1.2rem;
+        }
+        .section {
+            padding: 80px 50px;
+        }
+        .title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        .card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            transition: .3s;
+            border: 1px solid #333;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #777;
+        }
+        .card h3 {
+            margin-bottom: 10px;
+            color: #00d0ff;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        .skill {
+            padding: 12px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+        }
+        a.btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 32px;
+            background: linear-gradient(90deg,#6a00ff,#c850ff,#ff99ff);
+            color: #000;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.4s ease;
+            box-shadow: 0 0 15px rgba(200,80,255,0.4);
+        }
+        a.btn:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 0 25px rgba(200,80,255,0.7), 0 0 40px rgba(138,43,226,0.5);
+            background: linear-gradient(90deg,#ff99ff,#c850ff,#6a00ff) !important;
+        }
+        
+    /* Neon section dividers */
+.section { position: relative; }
+.section::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:60%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, #8a2be2, transparent);
+    opacity:0.4;
+}
+
+/* Glassmorphism cards */
+.card {
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s ease;
+}
+.card:hover {
+    box-shadow:0 0 20px rgba(138,43,226,0.4);
+    transform:translateY(-8px);
+}
+
+/* Ambient glow behind hero text */
+.hero::after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:550px;
+    height:550px;
+    background:radial-gradient(circle, rgba(138,43,226,0.45), transparent 70%);
+    transform:translate(-50%,-50%);
+    filter:blur(80px);
+    z-index:-1;
+}
+
+/* Smooth fade-in scroll animation */
+.fade-in {
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.8s ease;
+}
+.fade-in.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+a[href^="mailto"] { pointer-events: auto !important; position: relative; z-index: 5; }
+</style>
+<script>
+// Fade-in on scroll
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('visible');
+        }
+    });
+});
+</script>
+</head>
+<body>
+
+<header>
+    <h2>Anamay Prasad</h2>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" style="height:100vh; background:#000; display:flex; align-items:center; justify-content:center; text-align:center;">
+    <div style="width:100%; background:#000; padding:60px 0;">
+        <h1 style="font-size:4rem; font-weight:800; line-height:1.2; letter-spacing:1px;">
+            <span style="display:inline-block; background:linear-gradient(90deg,#6a00ff,#c850ff,#ff99ff); -webkit-background-clip:text; color:transparent; text-shadow:0 0 25px rgba(192,80,255,0.6); font-weight:900;">
+                Data Analyst
+            </span>
+            <br>
+            <span style="font-size:2.2rem; opacity:0.9; text-shadow:0 0 12px #a020f0;">&</span>
+            <br>
+            <span style="display:inline-block; background:linear-gradient(90deg,#ff4fd8,#b400ff,#7000ff); -webkit-background-clip:text; color:transparent; text-shadow:0 0 25px rgba(255,79,216,0.6); font-weight:900;">
+                3D Artist
+            </span>
+        </h1>
+        <p style="margin-top:10px; opacity:.8; font-size:1.2rem;">Blending creativity with technical precision from 3D worlds to real-world data.</p>
+        <a href="#projects" class="btn">Explore My Work</a>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2 class="title">About</h2>
+    <p style="max-width: 800px; margin: auto; text-align: center; line-height: 1.7; opacity: .9;">
+        I'm Anamay Prasad — a Data Analyst and 3D Artist with an equal passion for building powerful data‑driven systems and creating high‑quality visual experiences.
+<br><br>
+On the analytics side, I work with Python, R, SQL, automation, dashboards, and predictive modeling. I enjoy understanding patterns in data, building clean solutions, improving performance, and creating tools that make real‑world impact.
+<br><br>
+On the creative 3D side, I specialize in modeling, animation, stylized environments, and cinematic renders.
+<br><br>
+Combining both allows me to think logically, design visually, and solve problems from multiple angles.
+    </p>
+</section>
+
+
+
+<section id="projects" class="section" style="background:#000;">
+    <h2 class="title">3D Projects</h2>
+    <div class="projects">
+        
+        <div class="card">
+            <h3>Robot Animation (3D)</h3>
+            <p>Designed, rigged, and animated a mechanical robot using inverse kinematics and realistic lighting.</p>
+        </div>
+        <div class="card">
+            <h3>Mercedes Ad (3D Rendering)</h3>
+            <p>Created a cinematic automotive advertisement with dynamic shots and realistic reflections.</p>
+        </div>
+        <div class="card">
+            <h3>Pixar-Style Room</h3>
+            <p>3D stylized interior scene built with detailed props, mood lighting, and storytelling elements.</p>
+        </div>
+        <div class="card">
+            <h3>Glass Spider Robot</h3>
+            <p>Complex robotic spider with reflective materials and precise mechanical motion cycles.</p>
+        </div>
+        <div class="card">
+            <h3>Grease Pencil Animation</h3>
+            <p>2D hand-drawn styled animation exploring expressive movement and timing.</p>
+        </div>
+        <div class="card">
+            <h3>Futuristic Cube Scene</h3>
+            <p>Floating cube environment with procedural textures, wet-ground reflections, and photorealistic shading.</p>
+        </div>
+        <div class="card">
+            <h3>Hotel Balcony Visualization</h3>
+            <p>Architectural visualization of a hotel balcony modeled from a real photo with precise materials and lighting.</p>
+        </div>
+    </div>
+</section>
+
+<section id="work-exp" class="section">
+    <h2 class="title">Work Experience</h2>
+    <div class="projects">
+        <div class="card">
+            <h3>Data Science Intern — Mahindra & Mahindra, Mumbai<br><span style='font-size:14px; opacity:0.7;'>Jul 2025 – Sep 2025</span></h3>
+            <p>Developed a predictive model using user behavior analytics, achieving <strong>85% accuracy</strong> in forecasting Club Mahindra booking cancellations, enabling targeted retention strategies.</p>
+            <p>Collaborated with cross-functional teams to interpret resort trend data and customer insights, increasing model precision by <strong>30%</strong> during validation.</p>
+            <p>Performed large-scale exploratory data analysis to uncover actionable cancellation patterns, guiding strategic decision‑making for the resort network.</p>
+        </div>
+
+        <div class="card">
+            <h3>Data Analytics Trainee — MedTourEasy (Remote)<br><span style='font-size:14px; opacity:0.7;'>Jun 2025 – Jul 2025</span></h3>
+            <p>Gained hands‑on experience in data cleaning, visualization, problem solving, and data ethics.</p>
+            <p>Trained in data‑driven decision-making, data exploration, R programming, SQL, Tableau, and spreadsheets.</p>
+            <p>Completed a healthcare analytics project involving real-world medical datasets and report preparation.</p>
+        </div>
+    </div>
+</section>
+
+<section id="dev-projects" class="section">
+    <h2 class="title">Development Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <h3>Banking Management System</h3>
+            <p>Python + MySQL application with CRUD operations and a Tkinter-based GUI.</p>
+        </div>
+        
+        <div class="card">
+            <h3>Diabetes Analysis (R)</h3>
+            <p>Statistical analysis and predictive modeling on clinical health data.</p>
+        </div>
+
+        <div class="card">
+            <h3>Hotel Management System</h3>
+            <p>Python & MySQL system for managing guests, staff, records, search, update, and graphical insights.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section" style="background:#000;">
+    <h2 class="title">Skills</h2>
+    <div class="skills-grid">
+        <div class="skill">Blender</div>
+        <div class="skill">After Effects</div>
+        <div class="skill">DaVinci Resolve</div>
+        <div class="skill">Python</div>
+        <div class="skill">R Programming</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Video Editing</div>
+        <div class="skill">Compositing</div>
+        <div class="skill">VFX</div>
+        <div class="skill">Linux / macOS / Windows</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">German A2</div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2 class="title">Contact</h2>
+    <p style="text-align:center; line-height:1.7;">
+        📞 +91 7678015857<br>
+        📧 <a href="mailto:anamayprasad1@gmail.com" style="color:#00d0ff; text-decoration:none;">anamayprasad1@gmail.com</a><br><br>
+        <a class="btn" target="_blank" href="https://www.linkedin.com/in/anamay-prasad">LinkedIn</a>
+        <a class="btn" target="_blank" href="https://github.com/anamay1857">GitHub</a>
+        <a class="btn" target="_blank" href="https://www.instagram.com/kinetiqx_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+    </p>
+</section>
+
+<footer>
+    © 2025 Anamay Prasad — Portfolio Website
+</footer>
+
+</body>
+</html>
